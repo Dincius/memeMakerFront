@@ -1,0 +1,39 @@
+<h1 style="text-align: center;">Meme Maker</h1>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+     Upload Image <input type="file" (change)="Preview($event)" accept="image/*">
+  <br><br>
+  <canvas #mycanvas style="border: 1px solid black;"></canvas>
+    </div>
+    <div class="col-sm">
+      <div class="form-group">
+        <label>Top Text: </label>
+        <input type="text" class="form-control" #topInput>
+        <button type="button" class="btn btn-success" (click)="onTextFillTop(topInput.value);" style="margin-top: 5px;">Fill text</button>
+    </div>
+    <div class="form-group">
+        <label>Bottom Text: </label>
+        <input type="text" class="form-control" #botInput>
+        <button type="button" class="btn btn-success" (click)="onTextFillBot(botInput.value);" style="margin-top: 5px;">Fill text</button>
+    </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      
+    </div>
+    <div class="col-sm">
+        <a type="button" class="btn btn-primary" style="margin-top: 5px;" [href]="url" (click)="onDownload()" download="my-file.png">Download</a>
+    </div>
+    <div class="col-sm">
+        <button type="button" class="btn btn-danger" (click)="Clear();" style="margin-top: 5px;">Clear</button>
+    </div>
+  </div>
+  <div class="row">
+    <app-image-list></app-image-list>
+  </div>
+</div>
+
+
